@@ -1,6 +1,8 @@
 # Rspec::Notify::Osd
 
-TODO: Write a gem description
+This is a port of [rspec-nc](https://github.com/twe4ked/rspec-nc) to the
+Ubuntu's notify-osd notification system. It simly uses the `notify-send`
+binary to display notifications.
 
 ## Installation
 
@@ -18,7 +20,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You need to use a new formatter with rspec, the recommended way is to add this
+line into your `.rspec` file:
+
+    --format NotifyOsd
+
+This formatter needs to be used along with some other, as it does not provide
+any kind of visual output. Your `.rspec` file should look like this:
+
+    --format progress
+    --format NotifyOsd
+    --color
+
 
 ## Contributing
 
