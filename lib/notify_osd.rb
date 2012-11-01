@@ -14,6 +14,7 @@ class NotifyOsd < RSpec::Core::Formatters::BaseTextFormatter
       "\u2705 #{name}: Success"
     end
 
+    @failure_count = failure_count
     say title, body.join("\n")
   end
 
@@ -24,6 +25,8 @@ class NotifyOsd < RSpec::Core::Formatters::BaseTextFormatter
   private
 
   def say(title, body)
-    `notify-send "#{body}"`
+    icon = @failure_count > 0 ? "failure.png" : "success.png"
+    icon_path = File.join(File.dirname(__FILE__), "..", "images", icon)
+    `notify-send -i #{icon_path} "#{body}"`
   end
 end
