@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = "rspec-notify-osd"
-  gem.version       = "0.2.0"
-  gem.authors       = ["Roger Campos"]
+  gem.version       = "0.3.0"
+  gem.authors       = ["Roger Campos", "K.D. Gundermann"]
   gem.email         = ["roger@itnig.net"]
   gem.description   = %q{rspec notifications for notify-osd}
   gem.summary       = %q{rspec notifications for notify-osd}
@@ -16,5 +16,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'rspec', '~> 2.9'
+  gem.add_dependency 'rspec', '~> 3.0'
 end
